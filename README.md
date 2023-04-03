@@ -160,7 +160,8 @@ In scss/styles.css:
         }
 
 
-        ### More styling changes
+
+### More styling changes
 
                 // Create your own map
         $custom-colors: (
