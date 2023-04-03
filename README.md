@@ -105,7 +105,13 @@ In terminal:
 In scss/styles.css add:
 
 **Font Family**
+
+At the top of the file add: 
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;700&display=swap');
         
+ Lower down in the file, add: 
+ 
         // Fonts
         $font-family-sans-serif: 'Open Sans', sans-serif;
         $headings-font-family: 'Montserrat';
