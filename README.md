@@ -90,3 +90,30 @@ In ``data/static``, create another css file named "styles.css with the content:
            @import url('./build.css');
 
         /* @import url('http://localhost:3000/assets/css/index.bundle.css'); */
+        
+
+## CSS changes
+In styles.css file comment @import url('./build.css');, uncomment @import url('http://localhost:3000/assets/css/index.bundle.css');. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
+        
+In terminal: 
+        
+          npm run start 
+
+In scss/styles.css add:
+
+**Font Family**
+        $font-family-sans-serif: 'Open Sans', sans-serif;
+        $headings-font-family: 'Montserrat';
+        $headings-font-weight: 600;
+        $strong-font-weight: bold;
+
+**Custom colours**
+        // pls colours:
+        $orange: #f3933d;
+        $red: #df3644;
+        $purple: #a239a6;
+        $dark-blue: #267cce;
+        $darker-blue: #1e63a5;
+        $light-blue: #e5f1f9;
+        $teal: #52bdad;
+        $green: #4dab59;
