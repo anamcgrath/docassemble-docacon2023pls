@@ -125,7 +125,7 @@ In scss/styles.css add:
         
        
         
-### To change logo in top left corner, add the following code to the bottom of scss/styles.css
+**To change logo in top left corner, add the following code to the bottom of scss/styles.css:**
         
             #logo {
             background-image: url(pls-logo.svg);
@@ -145,3 +145,5 @@ In scss/styles.css add:
                 background-size: 269px 40px;
             }
         }
+
+In this repo, add the ``pls-logo.svg`` to ``data/static``
