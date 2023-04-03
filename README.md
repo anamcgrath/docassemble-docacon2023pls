@@ -151,4 +151,77 @@ In scss/styles.css add:
 
 In this repo (docassemble-docacon2023pls), add the ``pls-logo.svg`` to ``data/static``
 
+**Change navbar colour:**
+
+In scss/styles.css:
+
+        #dabody .navbar.bg-light {
+                background-color: $light-blue !important;
+        }
+
+
+        ### More styling changes
+
+                // Create your own map
+        $custom-colors: (
+            'custom-color': #900,
+        );
+
+        // Merge the maps
+        $theme-colors: map-merge($theme-colors, $custom-colors);
+
+        .btn-warning {
+            background-color: $dark-blue;
+            border-color: $dark-blue;
+        }
+        .btn-warning:hover {
+            background-color: $darker-blue;
+            border-color: $dark-blue;
+        }
+        // checkbox subscriptions
+        input.labelauty + label {
+            margin-top: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .navbar-brand.danavbar-title {
+            overflow: visible;
+        }
+
+        .daterm {
+            color: #000 !important;
+            text-decoration: underline dotted rgb(75, 75, 75);
+            text-underline-offset: 3px;
+        }
+        .daterm:hover {
+            color: #000;
+            text-decoration: underline dotted rgb(75, 75, 75) !important;
+        }
+        #daattributions {
+            margin-top: 18px;
+        }
+
+        .required-explain {
+            color: $warning;
+            font-size: 12px;
+        }
+
+        .da-form-group.row.da-field-container.da-field-container-note {
+            margin-top: -0.7rem;
+            margin-bottom: -0.2rem !important;
+            font-size: 12px;
+            opacity: 65%;
+        }
+
+        .dafooter {
+            opacity: 70%;
+            font-size: 12px;
+            text-align: center;
+            line-height: 18px !important;
+        }
+        footer.bg-light.dafooter {
+            background-color: #fff !important;
+        }
+
+
 
