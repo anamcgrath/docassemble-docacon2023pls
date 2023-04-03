@@ -18,53 +18,49 @@ In terminal:
 
 Replace components with the ones we've determined as necessary to have.
 
-      @import "bootstrap/scss/functions"; // Required
-      @import "bootstrap/scss/variables"; // Required
-      @import "bootstrap/scss/mixins"; // Required
-      @import "bootstrap/scss/utilities"; // added
+        // Required
+        @import "bootstrap/scss/functions";
+        @import "bootstrap/scss/variables";
+        @import "bootstrap/scss/maps";
+        @import "bootstrap/scss/mixins";
+        @import "bootstrap/scss/utilities";
+        @import "bootstrap/scss/root";
+        @import "bootstrap/scss/reboot";
 
-      @import "bootstrap/scss/root"; // Required
-      @import "bootstrap/scss/reboot"; // Required
-      @import "bootstrap/scss/type";
-      @import "bootstrap/scss/images"; // uncommented
-      @import "bootstrap/scss/containers"; // added
+        @import "bootstrap/scss/type";
+        @import "bootstrap/scss/images"; // uncommented
+        @import "bootstrap/scss/containers";
+        @import "bootstrap/scss/tables"; // uncommented
+        @import "bootstrap/scss/forms"; // uncommented
+        @import "bootstrap/scss/buttons";
+        @import "bootstrap/scss/transitions";
+        @import "bootstrap/scss/dropdown";
+        @import "bootstrap/scss/button-group"; // uncommented
+        @import "bootstrap/scss/nav"; // uncommented
+        @import "bootstrap/scss/navbar"; // Requires nav // uncommented
+        // @import "bootstrap/scss/card";
+        // @import "bootstrap/scss/breadcrumb";
+        // @import "bootstrap/scss/accordion";
+        // @import "bootstrap/scss/pagination";
+        @import "bootstrap/scss/badge"; // uncommented
+        @import "bootstrap/scss/alert"; // uncommented
+        @import "bootstrap/scss/progress"; // uncommented
+        // @import "bootstrap/scss/list-group";
+        @import "bootstrap/scss/close";
+        @import "bootstrap/scss/toasts"; // uncommented
+        @import "bootstrap/scss/modal"; // Requires transitions
+        @import "bootstrap/scss/tooltip"; // uncommented
+        @import "bootstrap/scss/popover"; // uncommented
+        // @import "bootstrap/scss/carousel";
+        @import "bootstrap/scss/spinners"; // uncommented
+        @import "bootstrap/scss/offcanvas"; // Requires transitions
+        // @import "bootstrap/scss/placeholders";
 
-      // @import "bootstrap/scss/code";
-      @import "bootstrap/scss/grid";
-      @import "bootstrap/scss/tables"; // uncommented
-      @import "bootstrap/scss/forms"; // uncommented
-      @import "bootstrap/scss/buttons";
-      @import "bootstrap/scss/transitions";
-      @import "bootstrap/scss/dropdown";
-      @import "bootstrap/scss/button-group";
-      // @import "bootstrap/scss/input-group"; // Requires forms
-      // @import "bootstrap/scss/custom-forms";
-      @import "bootstrap/scss/nav"; // uncommented
-      @import "bootstrap/scss/navbar"; // Requires nav // uncommented
-      // @import "bootstrap/scss/card";
-      // @import "bootstrap/scss/breadcrumb";
-      // @import "bootstrap/scss/pagination";
-      @import "bootstrap/scss/badge"; // uncommented
-      // @import "bootstrap/scss/jumbotron";
-      @import "bootstrap/scss/alert"; // uncommented
-      @import "bootstrap/scss/progress"; // uncommented
-      // @import "bootstrap/scss/media";
-      // @import "bootstrap/scss/list-group";
-      @import "bootstrap/scss/close";
-      @import "bootstrap/scss/toasts"; // uncommented
-      @import "bootstrap/scss/modal"; // Requires transitions
-      @import "bootstrap/scss/tooltip"; // uncommented
-      @import "bootstrap/scss/popover"; // uncommented
-      // @import "bootstrap/scss/carousel";
-      @import "bootstrap/scss/spinners"; // uncommented
-      // @import "bootstrap/scss/utilities";
-      // @import "bootstrap/scss/print";
+        // Helpers
+        @import "bootstrap/scss/helpers"; // uncommented
 
-      // Helpers
-      @import "bootstrap/scss/helpers"; // added
-
-      // Utilities
-      @import "bootstrap/scss/utilities/api"; // added
+        // Utilities
+        @import "bootstrap/scss/utilities/api";
       
 
 ### Replace styling at bottom of scss/styles.scss: 
@@ -93,8 +89,15 @@ In ``data/static``, create another css file named "styles.css with the content:
         
 
 ## CSS changes
-In styles.css file comment @import url('./build.css');, uncomment @import url('http://localhost:3000/assets/css/index.bundle.css');. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
-        
+In styles.css file comment @import url('./build.css');, uncomment @import url('http://localhost:3000/css/styles.css');. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
+
+Like this: 
+
+
+        /* @import url('./build.css'); */
+
+        @import url('http://localhost:3000/css/styles.css'); 
+
 In terminal: 
         
           npm run start 
@@ -146,4 +149,6 @@ In scss/styles.css add:
             }
         }
 
-In this repo, add the ``pls-logo.svg`` to ``data/static``
+In this repo (docassemble-docacon2023pls), add the ``pls-logo.svg`` to ``data/static``
+
+
