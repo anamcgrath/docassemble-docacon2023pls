@@ -85,7 +85,7 @@ In ``data/static``, create another css file named "styles.css with the content:
 
            @import url('./build.css');
 
-        /* @import url('http://localhost:3000/assets/css/index.bundle.css'); */
+        /* @import url('http://localhost:3000/css/styles.css'); */
         
 
 ## CSS changes
