@@ -67,7 +67,7 @@ Replace components with the ones we've determined as necessary to have.
       @import "bootstrap/scss/utilities/api"; // added
       
 
-** Replace styling at bottom of scss/styles.scss: ** 
+### Replace styling at bottom of scss/styles.scss: 
 
         body {
         padding: 3rem 1.5rem;
@@ -85,4 +85,8 @@ In terminal:
       
 Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
 
+In ``data/static``, create another css file named "styles.css with the content: 
 
+           @import url('./build.css');
+
+        /* @import url('http://localhost:3000/assets/css/index.bundle.css'); */
