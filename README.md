@@ -102,12 +102,15 @@ In terminal:
 In scss/styles.css add:
 
 **Font Family**
+        
+        // Fonts
         $font-family-sans-serif: 'Open Sans', sans-serif;
         $headings-font-family: 'Montserrat';
         $headings-font-weight: 600;
         $strong-font-weight: bold;
 
 **Custom colours**
+
         // pls colours:
         $orange: #f3933d;
         $red: #df3644;
@@ -117,3 +120,28 @@ In scss/styles.css add:
         $light-blue: #e5f1f9;
         $teal: #52bdad;
         $green: #4dab59;
+        
+        
+        
+       
+        
+### To change logo in top left corner, add the following code to the bottom of scss/styles.css
+        
+            #logo {
+            background-image: url(pls-logo.svg);
+            display: block;
+            text-indent: -9999px;
+            margin: 0;
+            width: 200px;
+            height: 40px;
+            background-size: 200px 40px;
+            background-repeat: no-repeat;
+        }
+
+        @include media-breakpoint-up(sm) {
+            #logo {
+                width: 269px;
+                height: 40px;
+                background-size: 269px 40px;
+            }
+        }
