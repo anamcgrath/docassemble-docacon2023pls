@@ -7,11 +7,11 @@ A docassemble extension.
 Use bootstrap example repo (https://github.com/twbs/examples/tree/main/sass-js) as a base to create sass compiler 
 
 In terminal: 
-  cd sass-js
-  
-  Nvm use 18
-  
-  Npm install 
+    cd sass-js
+
+    Nvm use 18
+
+    Npm install 
   
 In scss/styles.css:
 Replace components with the ones we've determined as necessary to have.
