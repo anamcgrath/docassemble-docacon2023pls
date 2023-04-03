@@ -1,0 +1,305 @@
+---
+features:
+  css: styles.css
+  progress bar: True
+  inverse navbar: False
+  show progress bar percentage: True
+  labels above fields: True
+---  
+metadata:
+  show login: False
+  exit url: https://www.peopleslawschool.ca/template-agreement-sale-used-car/
+  title: |
+    Template agreement for sale of a used car | document builder
+  short title: |
+    Used car agreement | document builder
+  logo: 
+    <h2 id="logo">People's Law School</h2>
+  short logo:
+    <h4 id="logo">PLS</h4>
+  description: |
+    Protect yourself with this free template to help you draft an agreement for the sale of a used car. From a trusted non-profit in British Columbia.
+  social:
+    description: |
+      Protect yourself with this free template to help you draft an agreement for the sale of a used car. From a trusted non-profit in British Columbia.
+    image: docassemble.plsBase:data/static/PLS-logo-for-opengraph.png
+    twitter:
+      description: |
+        Protect yourself with this free template to help you draft an agreement for the sale of a used car. From a trusted non-profit in British Columbia.
+      site: "https://www.peopleslawschool.ca/template-agreement-sale-used-car/"
+      image: docassemble.plsBase:data/static/PLS-logo-for-opengraph.png
+    og:
+      description: |
+        Protect yourself with this free template to help you draft an agreement for the sale of a used car. From a trusted non-profit in British Columbia.
+      image: docassemble.plsBase:data/static/PLS-logo-for-opengraph.png
+--- 
+objects:
+  - seller: Individual   
+  - buyer: Individual
+---
+mandatory: True
+code: |
+  agreement_date
+  seller.name.first
+  buyer.name.first
+  car_make_model
+  purchase_price
+  car_warranty
+  car_inspection
+  resolving_disputes
+  governing_law
+  gather_email
+  email
+  email_sent_ok
+  final_screen
+---
+ga id: agreement_date
+question: |
+  Agreement for sale of a used car
+subquestion: |
+   Having a written agreement is a great way to protect yourself when buying a used car. For important context, make sure to read [how to protect yourself when buying a used car](https://www.peopleslawschool.ca/buying-used-car-protect-yourself/) and [closing the sale](https://www.peopleslawschool.ca/buying-used-car-closing-sale/).
+   
+    In the screens that follow, we’ll ask you a set of questions, and you’ll end up with a draft agreement that suits your needs. If you don’t have the information you need on hand, no worries. You can always edit the agreement afterwards using your word processor of choice.
+  
+    This information applies to British Columbia and is not intended as {legal advice} (see our [terms of use](https://www.peopleslawschool.ca/terms-use/#disclaimers)).
+fields:
+  - "**Date of the agreement**": agreement_date
+    datatype: date
+    default: ${ today() }
+under: "<span class='required-explain'>*these fields are required</span>"
+---
+ga id: seller_info
+question: Seller
+subquestion: |
+  First, a bit of information about you and the seller. 
+  
+  (Note you need to go through all the questions in one sitting. If you stop part way, you’ll lose what you’ve typed. Pro tip: if you don’t have some information you need, type in “*to be added.*” Later, you can add to and edit your draft agreement using your word processor of choice.)
+fields: 
+  - "**First name**": seller.name.first
+  - "**Last name**": seller.name.last
+  - "**City**": seller.city
+progress: 10
+post: |
+  **All information entered on this form is encrypted and inaccessible to anyone except the person who filled out the form.**
+---
+ga id: buyer_info
+question: Buyer
+fields:
+  - "**First name**": buyer.name.first
+  - "**Last name**": buyer.name.last
+  - "**City**": buyer.city
+progress: 20
+---
+ga id: vehicle_info
+question: Vehicle
+subquestion: |
+  Next, a bit of information about the vehicle.
+fields: 
+  - "**Make and model**": car_make_model
+  - "**Year**": car_year
+    datatype: integer
+    min: 1800
+    max: 2100
+    minlength: 4
+    maxlength: 4
+  - "**Colour**": car_colour
+  - "**VIN**": car_vin
+    maxlength: 50
+    help: |
+      Usually, you can find the VIN on the lower left corner of the dashboard, in front of the steering wheel.
+    hint: vehicle identification number (VIN) for vehicle
+  - "**Date of odometer reading**": car_odometer_date
+    datatype: date
+    default: ${ today() }
+  - "**Odometer reading**": car_odometer
+    hint: e.g. 150 000
+    datatype: number
+  - no label: car_km_miles
+    input type: radio
+    label above field: false
+    default: km
+    choices: 
+      - km
+      - miles
+progress: 35
+---
+ga id: payment_info
+question: Payment
+fields:  
+  - "**Purchase price**": purchase_price
+    datatype: currency 
+  - "**Payment is to be made by**": payment_type
+    input type: radio
+    choices:
+      - bank draft
+      - cash
+      - certified cheque
+      - online funds transfer
+  - "**Date payment to be paid**": payment_date
+    datatype: date
+  - "**Date of delivery of vehicle**": delivery_date
+    datatype: date  
+progress: 50
+---
+ga id: warranty_guarantee
+question: Warranties & guarantees
+fields: 
+  - Is the vehicle being sold with any warranties or guarantees?: car_warranty
+    datatype: radio
+    help: | 
+      A warranty or a guarantee is a promise about the quality of goods sold and what will be done if there are problems. When the seller provides a warranty or guarantee, this is in addition to the **legal warranty**, which implies a certain level of quality and durability in every sale of goods. [Learn more](https://www.peopleslawschool.ca/warranties-and-guarantees/).
+    choices: 
+      - Yes
+      - No
+  - "Here is sample wording you can add to your agreement relating to warranties and guarantees. **Edit the wording below**, or type in your own wording.": car_warranty_yes
+    input type: area
+    show if:
+      variable: car_warranty
+      is: Yes
+    default: |
+      The Seller swears the following is accurate to the best of their knowledge: 
+         (a) The Vehicle is fit for use for transportation.
+         (b) The odometer accurately records the true distance travelled by the Vehicle.
+         (c) The Vehicle has not had damage requiring repairs totalling more than $2,000.
+         (d) The Vehicle has never been used as a taxi, ride sharing vehicle, police car, emergency vehicle, a lease vehicle, or a rental vehicle, or in organized racing.
+         (e) The Vehicle is not subject to any liens, legal claims, court orders, or other security interests.
+         (f) The Vehicle does not have any outstanding repair notices or orders for inspection.
+    rows: 12
+  - "Here is sample wording you can add to your agreement relating to warranties and guarantees. **Edit the wording below**, or type in your own wording.": car_warranty_no
+    input type: area
+    show if:
+      variable: car_warranty
+      is: No
+    default: |
+      The Buyer understands that the Vehicle is sold without any warranties or guarantees, including under any statute such as the Sale of Goods Act. The Seller makes no warranties or guarantees for the Vehicle.
+    rows: 5
+progress: 60
+---
+ga id: inspection
+question: Inspection
+fields: 
+  - Will there be an inspection prior to the sale?: car_inspection
+    datatype: radio
+    choices: 
+      - Yes
+      - No
+  - "Here is sample wording you can add to your agreement relating to an inspection. **Edit the wording below**, or type in your own wording.": car_inspection_yes
+    input type: area
+    show if:
+      variable: car_inspection
+      is: Yes
+    default: |
+      The sale will go ahead only after there has been a mechanical inspection of the Vehicle by a mechanic chosen by the Buyer, and the Buyer has approved the results of the inspection.
+    rows: 4
+  - "Here is sample wording you can add to your agreement relating to an inspection. **Edit the wording below**, or type in your own wording.": car_inspection_no
+    input type: area
+    show if:
+      variable: car_inspection
+      is: No
+    default: |
+      There is no mechanical inspection of the Vehicle being done prior to the sale. 
+progress: 70
+---
+ga id: resolving_disputes
+question: Resolving disputes
+subquestion: |
+    Write into the agreement how disputes will be resolved. Here is sample wording you can use, or type in your own wording.
+fields: 
+  - no label: resolving_disputes
+    input type: area
+    default: |
+      If a dispute arises out of this agreement, and the dispute cannot be resolved by negotiations between the parties, the parties agree first to try in good faith to resolve the dispute by mediation before resorting to arbitration, litigation or some other dispute resolution procedure.
+    rows: 6
+progress: 75
+---
+ga id: governing_law
+question: Governing law
+subquestion: |
+  Write into the agreement which laws apply to it. Here is sample wording you can use, or type in your own wording.
+fields: 
+  - no label: governing_law
+    input type: area
+    default: |
+       The laws of British Columbia and the laws of Canada applicable in that province govern this agreement. The parties agree that the courts of British Columbia will have exclusive jurisdiction to hear and decide any litigation which may arise out of or relates to this agreement.
+    rows: 6
+progress: 85
+---
+ga id: draft_ready
+question: |
+  Your draft agreement is ready!
+subquestion: |
+  Download your draft agreement, or send it to yourself by email. 
+action buttons:
+  - label: Download (Word)
+    action: ${ used_car_template.docx.url_for(attachment=True) }
+    color: success
+    icon: file-word
+    placement: before
+  - label: Download (PDF)
+    action: ${ used_car_template.pdf.url_for(attachment=True) }
+    color: success
+    icon: file-pdf
+    placement: before
+continue button label: |
+  Email :paper-plane:
+continue button field: gather_email
+post: |
+  **Pro tip: Review your draft letter in your word processor of choice, making any needed changes, before sending it to the other party.**
+  
+  **Disclaimer:** At People’s Law School, we believe accurate, plain English information can help people take action to work out legal matters. This template is a sample. **It is not intended as {legal advice}.** We recommend you consult a legal professional in British Columbia if you want professional assurance that this information is appropriate to your situation.
+progress: 90
+---
+ga id: email_agreement
+question: |
+  Email agreement
+fields:
+  - "**Your email address**": email
+    datatype: email
+  - note: |
+      We do not store your email address. It is used only to send you this draft agreement.
+continue button field: download_shown
+continue button label: Send agreement
+progress: 95
+---
+code: |
+    email_sent_ok = send_email(to=email, subject="Your agreement for sale of used car", template=email_template, attachments=[used_car_template.docx, used_car_template.pdf]) 
+---
+ga id: final_screen
+event: final_screen
+question: Email sent
+subquestion: |
+  Your draft agreement was sent to ${ email }.
+action buttons:
+  - label: Go to People's Law website
+    action: https://www.peopleslawschool.ca/
+    color: primary
+    new window: True
+    placement: before
+buttons: 
+  - Start another agreement: restart
+progress: 100
+---
+code: |
+  doc_filename = "agreement_for_sale_of_" + car_make_model.replace(" ", "_").lower()
+---
+attachment:
+  name: Agreement for sale of ${ car_make_model }
+  filename: ${ doc_filename }
+  docx template file: used_car_template.docx
+  variable name: used_car_template
+  valid formats:
+    - pdf
+    - docx 
+---
+template: email_template
+subject: |
+  Your draft agreement
+content: |
+  # Your draft agreement is ready!
+  Download the used car agreement for the ${ car_make_model } below. 
+  
+  Pro tip: Review your draft letter in your word processor of choice, making any needed changes, before sending it to the other party.
+---
+terms:
+  legal advice: |
+      Legal advice applies the law to an individual's specific situation. It includes recommending a specific option or next step, or providing assurance that information applies to an individual's specific situation.
