@@ -65,16 +65,24 @@ Replace components with the ones we've determined as necessary to have.
 
       // Utilities
       @import "bootstrap/scss/utilities/api"; // added
+      
 
 ** Replace styling at bottom of scss/styles.scss: ** 
+
         body {
         padding: 3rem 1.5rem;
-      }
+        }
 
-      // Style Bootstrap icons
-      .bi {
+        // Style Bootstrap icons
+        .bi {
         fill: currentColor;
-      }
+        }
 
+
+In terminal: 
+
+      npm run build
+      
+Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
 
 
