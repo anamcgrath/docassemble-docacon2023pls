@@ -120,7 +120,7 @@ At the top of the file add:
         
         $min-contrast-ratio: 1.5;
         
- *This should be above imports*      
+ *This should be **above** imports*      
        
 
 **Custom colours**
@@ -171,7 +171,7 @@ At the top of the file add:
             }
         }
 
-*^Below imports*
+*^**Below** imports*
 
 
 **Add the ``svg`` logo to a folder called images in the sass compiler**
