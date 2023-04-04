@@ -2,7 +2,7 @@
 
 This guide demonstrates how a Bootstrap SASS compiler can be used to create styling changes in a Docassemble interview, allowing developers to see their CSS changes applied instantly in the interview file. 
 
-For a step-by-step tutorial, refer to the following [Youtube video](https://www.youtube.com/watch?v=0Mn0LUbVWzM).
+For a step-by-step tutorial, refer to the following [YouTube video](https://www.youtube.com/watch?v=0Mn0LUbVWzM).
 
 ## Install SASS compiler 
 
