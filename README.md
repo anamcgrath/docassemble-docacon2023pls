@@ -117,6 +117,11 @@ At the top of the file add:
         $headings-font-family: 'Montserrat';
         $headings-font-weight: 600;
         $strong-font-weight: bold;
+        
+        $min-contrast-ratio: 1.5;
+        
+        
+       
 
 **Custom colours**
 
