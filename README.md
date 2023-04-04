@@ -174,7 +174,9 @@ At the top of the file add:
 *^**Below** imports*
 
 
+
 **Add the ``svg`` logo to a folder called images in the sass compiler**
+
 
 
 **In the .yml file, add  ``id="logo"`` to both the ``<h2/>`` and ``<h4/>`` tags**
