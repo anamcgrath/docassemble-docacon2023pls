@@ -150,36 +150,38 @@ At the top of the file add:
   *This should be **above** imports*  
   
         
-### To change logo in top left corner, add the following code to the bottom of scss/styles.css:
-        
-            #logo {
-            background-image: url(http://localhost:3000/images/pls-logo.svg);
-            display: block;
-            text-indent: -9999px;
-            margin: 0;
-            width: 200px;
-            height: 40px;
-            background-size: 200px 40px;
-            background-repeat: no-repeat;
-        }
+### Change logo in top left corner 
 
-        @include media-breakpoint-up(sm) {
-            #logo {
-                width: 269px;
+1. **Add the following code to the bottom of scss/styles.css:**
+        
+                #logo {
+                background-image: url(http://localhost:3000/images/pls-logo.svg);
+                display: block;
+                text-indent: -9999px;
+                margin: 0;
+                width: 200px;
                 height: 40px;
-                background-size: 269px 40px;
+                background-size: 200px 40px;
+                background-repeat: no-repeat;
             }
-        }
+
+            @include media-breakpoint-up(sm) {
+                #logo {
+                    width: 269px;
+                    height: 40px;
+                    background-size: 269px 40px;
+                }
+            }
 
 *^**Below** imports*
 
 
 
-**Add the ``svg`` logo to a folder called images in the sass compiler**
+2. **Add the ``svg`` logo to a folder called images in the sass compiler**
 
 
 
-**In the .yml file, add  ``id="logo"`` to both the ``<h2/>`` and ``<h4/>`` tags**
+3. **In the .yml file, add  ``id="logo"`` to both the ``<h2/>`` and ``<h4/>`` tags**
 
 It should now look like this: 
 
