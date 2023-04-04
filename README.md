@@ -6,11 +6,11 @@ For a step-by-step tutorial, refer to the following [YouTube video](https://www.
 
 ## Install SASS compiler 
 
-Use Bootstrap's example repository as a base to create a sass compiler.  
+Use Bootstrap's example repository to create a SASS compiler.  
 
 The repository can be found here: https://github.com/twbs/examples/tree/main/sass-js  
     
-Clone the repo using the instructions in it's README file.  
+Clone the repository using the instructions in its README file.  
 
   
 In terminal: 
