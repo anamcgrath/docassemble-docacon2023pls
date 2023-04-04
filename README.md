@@ -130,7 +130,17 @@ At the top of the file add:
         $teal: #52bdad;
         $green: #4dab59;
         
-        
+        // Customize some defaults
+        $body-color: #000;
+        $body-bg: #fff;
+        $border-radius: 0.4rem;
+        $success: $green;
+
+        $primary: $dark-blue;
+        $secondary: $light-blue;
+        $warning: $red;
+        $info: $green;
+        $dark: $orange;
         
        
         
