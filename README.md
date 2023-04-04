@@ -168,6 +168,7 @@ At the top of the file add:
 
 **Add the ``svg`` logo to a folder called images in the sass compiler**
 
+
 **In the .yml file, add  ``id="logo"`` to both the ``<h2/>`` and ``<h4/>`` tags**
 
 It should now look like this: 
@@ -176,6 +177,8 @@ It should now look like this:
            <h2 id="logo">People's Law School</h2>
         short logo:
           <h4 id="logo">PLS</h4>
+          
+          
 
 To make the change permanent, add the ``pls-logo.svg`` to ``data/static`` in this repo (docassemble-docacon2023pls).
 
