@@ -20,14 +20,14 @@ In terminal:
 
 ## Set up 
 
-1. In ``.yml`` file, link the css stylesheet to the interview:
+**In ``.yml`` file, link the css stylesheet to the interview:**
 
           css: styles.css
           
  This should be below line 2 in "``features:``"
  
 
-2. In ``data/static``, create a css file named "styles.css with the content: 
+**In ``data/static``, create a css file named "styles.css with the content:**
 
 Like this: 
 
@@ -39,12 +39,12 @@ Like this:
 
 In the ``styles.css`` file comment ``@import url('./build.css');``, uncomment ``@import url('http://localhost:3000/css/styles.css');``. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
 
-3. In terminal: 
+**In terminal:**
         
           npm run start 
 
 
-### In scss/styles.css:
+**In scss/styles.css:**
 
 Replace components with the ones we've determined as necessary to have.
 
@@ -94,15 +94,18 @@ Replace components with the ones we've determined as necessary to have.
 
         
 
-### In scss/styles.css add:
+## CSS changes
 
-**Font Family**
+### Font Family
 
-At the top of the file add: 
+**In scss/styles.css add:**
+
+1. At the top of the file add: 
 
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;700&display=swap');
-        
- Lower down in the file, add: 
+  
+  
+2. Lower down in the file, add: 
  
         // Fonts
         $font-family-sans-serif: 'Open Sans', sans-serif;
@@ -115,7 +118,9 @@ At the top of the file add:
  *This should be **above** imports*      
        
 
-**Custom colours**
+### Custom colours
+
+**In scss/styles.css add:**
 
         // pls colours:
         $orange: #f3933d;
@@ -142,7 +147,7 @@ At the top of the file add:
   *This should be **above** imports*  
   
         
-### Change logo in top left corner 
+### Logo in top left corner 
 
 1. **Add the following code to the bottom of scss/styles.css:**
         
@@ -188,9 +193,9 @@ To make the change permanent, add the ``pls-logo.svg`` to ``data/static`` in thi
 
 
 
-### Change navbar colour:
+### Navbar colour
 
-In scss/styles.css:
+**In scss/styles.css:**
 
         #dabody .navbar.bg-light {
                 background-color: $light-blue !important;
@@ -199,6 +204,8 @@ In scss/styles.css:
 
 
 ### More styling changes
+
+Below are some more styles we added to customize the look of the form. 
 
         body {
         padding: 3rem 1.5rem;
@@ -266,16 +273,17 @@ In scss/styles.css:
         }
 
 
-## To put these changes in the ``data/static/build.css`` file 
+## Put these changes into production 
 
-In terminal: 
+1. In terminal:
 
-      npm run build
+        npm run build
+        
       
-Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
+2. Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
 
-In ``data/static``, create another css file named "styles.css with the content: 
+3. In ``data/static``, create another css file named "styles.css with the content: 
 
-           @import url('./build.css');
+            @import url('./build.css');
 
-        /* @import url('http://localhost:3000/css/styles.css'); */
+            /* @import url('http://localhost:3000/css/styles.css'); */
