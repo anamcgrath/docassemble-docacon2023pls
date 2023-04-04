@@ -144,10 +144,10 @@ At the top of the file add:
         
        
         
-**To change logo in top left corner, add the following code to the bottom of scss/styles.css:**
+### To change logo in top left corner, add the following code to the bottom of scss/styles.css:
         
             #logo {
-            background-image: url(pls-logo.svg);
+            background-image: url(http://localhost:3000/images/pls-logo.svg);
             display: block;
             text-indent: -9999px;
             margin: 0;
@@ -165,7 +165,21 @@ At the top of the file add:
             }
         }
 
-In this repo (docassemble-docacon2023pls), add the ``pls-logo.svg`` to ``data/static``
+
+**Add the ``svg`` logo to a folder called images in the sass compiler**
+
+**In the .yml file, add  ``id="logo"`` to both the ``<h2/>`` and ``<h4/>`` tags**
+
+It should now look like this: 
+
+        logo: 
+           <h2 id="logo">People's Law School</h2>
+        short logo:
+          <h4 id="logo">PLS</h4>
+
+To make the change permanent, add the ``pls-logo.svg`` to ``data/static`` in this repo (docassemble-docacon2023pls).
+
+
 
 **Change navbar colour:**
 
@@ -179,7 +193,7 @@ In scss/styles.css:
 
 ### More styling changes
 
-                // Create your own map
+        // Create your own map
         $custom-colors: (
             'custom-color': #900,
         );
