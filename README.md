@@ -17,7 +17,14 @@ In terminal:
 
 ## CSS changes
 
-In ``data/static``, create another css file named "styles.css with the content: 
+In ``.yml`` file, link the css stylesheet to the interview:
+
+          css: styles.css
+          
+ This should be below line 2 in "``features:``"
+ 
+
+In ``data/static``, create a css file named "styles.css with the content: 
 
 Like this: 
 
