@@ -189,8 +189,7 @@ It should now look like this:
           
           
 
-To make the change permanent, add the ``pls-logo.svg`` to ``data/static`` in this repo (docassemble-docacon2023pls).
-
+To make the change permanent, add the ``pls-logo.svg`` to ``data/static`` in your doccassemble repository. 
 
 
 ### Navbar colour
@@ -275,14 +274,14 @@ Below are some more styles we added to customize the look of the form.
 
 ## Put these changes into production 
 
-1. In terminal:
+1. **In terminal:**
 
         npm run build
         
       
-2. Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
+2. **Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repository**
 
-3. In ``data/static``, create another css file named "styles.css with the content: 
+3. **In ``data/static``, create another css file named "styles.css with the content:**
 
             @import url('./build.css');
 
