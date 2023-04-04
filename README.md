@@ -120,7 +120,7 @@ At the top of the file add:
         
         $min-contrast-ratio: 1.5;
         
-        
+ *This should be above imports*      
        
 
 **Custom colours**
@@ -147,7 +147,8 @@ At the top of the file add:
         $info: $green;
         $dark: $orange;
         
-       
+  *This should be **above** imports*  
+  
         
 ### To change logo in top left corner, add the following code to the bottom of scss/styles.css:
         
@@ -169,6 +170,8 @@ At the top of the file add:
                 background-size: 269px 40px;
             }
         }
+
+*^Below imports*
 
 
 **Add the ``svg`` logo to a folder called images in the sass compiler**
