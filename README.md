@@ -1,5 +1,9 @@
 # How to give Docassemble a custom look and feel 
 
+This guide demonstrates how a Bootstrap SASS compiler can be used to create styling changes in a Docassemble interview, allowing developers to see their CSS changes applied instantly in the interview file. 
+
+For a step-by-step tutorial, refer to the following [Youtube video](https://www.youtube.com/watch?v=0Mn0LUbVWzM).
+
 ## Install SASS compiler 
 
 Use Bootstrap's example repository as a base to create a sass compiler.  
@@ -279,7 +283,7 @@ Below are some more styles we added to customize the look of the form.
       
 2. **Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repository**
 
-3. **In ``data/static``, create another css file named "styles.css with the content:**
+3. **In the ``data/static/styles.css`` file uncomment @import url('./build.css');, comment @import url('http://localhost:3000/css/styles.css');.**
 
             @import url('./build.css');
 
