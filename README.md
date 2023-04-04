@@ -29,8 +29,6 @@ In terminal:
 
 **In ``data/static``, create a css file named "styles.css with the content:**
 
-Like this: 
-
 
         /* @import url('./build.css'); */
 
@@ -170,7 +168,7 @@ Replace components with the ones we've determined as necessary to have.
                 }
             }
 
-*^**Below** imports*
+    *^**Below** imports*
 
 
 
