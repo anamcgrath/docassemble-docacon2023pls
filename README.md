@@ -1,11 +1,14 @@
 # How to give Docassemble a custom look and feel 
 
-### Install SASS compiler 
+## Install SASS compiler 
 
-Use Bootstrap's example repository as a base to create a sass compiler. 
-The repository can be found here: https://github.com/twbs/examples/tree/main/sass-js
-Clone the repo using the instructions in it's README file. 
+Use Bootstrap's example repository as a base to create a sass compiler.  
 
+The repository can be found here: https://github.com/twbs/examples/tree/main/sass-js  
+    
+Clone the repo using the instructions in it's README file.  
+
+  
 In terminal: 
     
     cd sass-js
@@ -15,16 +18,16 @@ In terminal:
     Npm install 
     
 
-## CSS changes
+## Set up 
 
-In ``.yml`` file, link the css stylesheet to the interview:
+1. In ``.yml`` file, link the css stylesheet to the interview:
 
           css: styles.css
           
  This should be below line 2 in "``features:``"
  
 
-In ``data/static``, create a css file named "styles.css with the content: 
+2. In ``data/static``, create a css file named "styles.css with the content: 
 
 Like this: 
 
@@ -32,10 +35,11 @@ Like this:
         /* @import url('./build.css'); */
 
         @import url('http://localhost:3000/css/styles.css'); 
+        
 
-In styles.css file comment @import url('./build.css');, uncomment @import url('http://localhost:3000/css/styles.css');. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
+In the ``styles.css`` file comment ``@import url('./build.css');``, uncomment ``@import url('http://localhost:3000/css/styles.css');``. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
 
-In terminal: 
+3. In terminal: 
         
           npm run start 
 
@@ -87,19 +91,7 @@ Replace components with the ones we've determined as necessary to have.
 
         // Utilities
         @import "bootstrap/scss/utilities/api";
-      
 
-### Replace styling at bottom of scss/styles.scss: 
-
-        body {
-        padding: 3rem 1.5rem;
-        }
-
-        // Style Bootstrap icons
-        .bi {
-        fill: currentColor;
-        }
-        
         
 
 ### In scss/styles.css add:
@@ -207,6 +199,10 @@ In scss/styles.css:
 
 
 ### More styling changes
+
+        body {
+        padding: 3rem 1.5rem;
+        }
 
         // Create your own map
         $custom-colors: (
