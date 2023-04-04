@@ -13,7 +13,26 @@ In terminal:
     Nvm use 18
 
     Npm install 
-  
+    
+
+## CSS changes
+
+In ``data/static``, create another css file named "styles.css with the content: 
+
+Like this: 
+
+
+        /* @import url('./build.css'); */
+
+        @import url('http://localhost:3000/css/styles.css'); 
+
+In styles.css file comment @import url('./build.css');, uncomment @import url('http://localhost:3000/css/styles.css');. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
+
+In terminal: 
+        
+          npm run start 
+
+
 ### In scss/styles.css:
 
 Replace components with the ones we've determined as necessary to have.
@@ -73,36 +92,10 @@ Replace components with the ones we've determined as necessary to have.
         .bi {
         fill: currentColor;
         }
-
-
-In terminal: 
-
-      npm run build
-      
-Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
-
-In ``data/static``, create another css file named "styles.css with the content: 
-
-           @import url('./build.css');
-
-        /* @import url('http://localhost:3000/css/styles.css'); */
+        
         
 
-## CSS changes
-In styles.css file comment @import url('./build.css');, uncomment @import url('http://localhost:3000/css/styles.css');. Change 3000 to your port if needed. It allows docassemble to include styles in development and see changes in current application immediately.
-
-Like this: 
-
-
-        /* @import url('./build.css'); */
-
-        @import url('http://localhost:3000/css/styles.css'); 
-
-In terminal: 
-        
-          npm run start 
-
-In scss/styles.css add:
+### In scss/styles.css add:
 
 **Font Family**
 
@@ -241,4 +234,16 @@ In scss/styles.css:
         }
 
 
+## To put these changes in the ``data/static/build.css`` file 
 
+In terminal: 
+
+      npm run build
+      
+Copy content of ``css/styles.css`` to ``data/static/build.css`` in your docassemble repo
+
+In ``data/static``, create another css file named "styles.css with the content: 
+
+           @import url('./build.css');
+
+        /* @import url('http://localhost:3000/css/styles.css'); */
