@@ -196,7 +196,7 @@ To make the change permanent, add the ``pls-logo.svg`` to ``data/static`` in thi
 
 
 
-**Change navbar colour:**
+### Change navbar colour:
 
 In scss/styles.css:
 
