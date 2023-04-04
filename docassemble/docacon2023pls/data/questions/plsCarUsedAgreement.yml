@@ -1,6 +1,5 @@
 ---
 features:
-  css: styles.css
   progress bar: True
   inverse navbar: False
   show progress bar percentage: True
@@ -14,9 +13,9 @@ metadata:
   short title: |
     Used car agreement | document builder
   logo: 
-    <h2 id="logo">People's Law School</h2>
+    <h2>People's Law School</h2>
   short logo:
-    <h4 id="logo">PLS</h4>
+    <h4>PLS</h4>
   description: |
     Protect yourself with this free template to help you draft an agreement for the sale of a used car. From a trusted non-profit in British Columbia.
   social:
