@@ -1,10 +1,10 @@
-# docassemble.docacon2023pls
-
-A docassemble extension.
+# How to give Docassemble a custom look and feel 
 
 ### Install SASS compiler 
 
-Use bootstrap example repo (https://github.com/twbs/examples/tree/main/sass-js) as a base to create sass compiler 
+Use Bootstrap's example repository as a base to create a sass compiler. 
+The repository can be found here: https://github.com/twbs/examples/tree/main/sass-js
+Clone the repo using the instructions in it's README file. 
 
 In terminal: 
     
